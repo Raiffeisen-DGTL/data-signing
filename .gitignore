@@ -1,0 +1,8 @@
+.gradle
+.idea
+out
+build
+target
+*.iml
+*.ipr
+*.pfx

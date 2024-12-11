@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'ru.raiffeisen'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation fileTree(dir: 'lib', include: ['*.jar'])
+}
+
+application {
+    mainClass = 'ru.raiffeisen.signing.App'
+}
+
+compileJava.doFirst {
+    assert file("./lib/AdES-core.jar").exists()
+    assert file("./lib/ASN1P.jar").exists()
+    assert file("./lib/asn1rt.jar").exists()
+    assert file("./lib/bcpkix-jdk15on-1.60.jar").exists()
+    assert file("./lib/bcprov-jdk15on-1.60.jar").exists()
+    assert file("./lib/CAdES.jar").exists()
+    assert file("./lib/commons-codec-1.15.jar").exists()
+    assert file("./lib/JCP.jar").exists()
+    assert file("./lib/JCPRevCheck.jar").exists()
+    assert file("./lib/JCPRevTools.jar").exists()
+    assert file("./lib/JCSP.jar").exists()
+}
