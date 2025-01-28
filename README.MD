@@ -29,7 +29,8 @@ keytool -importcert -trustcacerts -keystore $JAVA_HOME/lib/security/cacerts -sto
 
 ### Необходимые библиотеки
 
-1. Необходимо получить лицензию и скачать библиотеки [сертифицированной версии КриптоПро Java CSP и JTLS (5.0.45549-A для Java 11 и выше)](https://cryptopro.ru/products/csp/downloads#latest_csp50r3_jcsp):
+1. Необходимо получить лицензию и скачать [КриптоПро CSP 5.0](https://cryptopro.ru/products/csp/downloads)
+2. Скачать библиотеки [сертифицированной версии КриптоПро Java CSP и JTLS (5.0.45549-A для Java 11 и выше)](https://cryptopro.ru/products/csp/downloads#latest_csp50r3_jcsp):
    * [AdES-core.jar](https://cryptopro.ru/products/csp/downloads#latest_csp50r3_jcsp)
    * [ASN1P.jar](https://cryptopro.ru/products/csp/downloads#latest_csp50r3_jcsp)
    * [asn1rt.jar](https://cryptopro.ru/products/csp/downloads#latest_csp50r3_jcsp)
@@ -38,12 +39,16 @@ keytool -importcert -trustcacerts -keystore $JAVA_HOME/lib/security/cacerts -sto
    * [JCPRevCheck.jar](https://cryptopro.ru/products/csp/downloads#latest_csp50r3_jcsp)
    * [JCPRevTools.jar](https://cryptopro.ru/products/csp/downloads#latest_csp50r3_jcsp)
    * [JCSP.jar](https://cryptopro.ru/products/csp/downloads#latest_csp50r3_jcsp)
-2. Скачать библиотеки криптографии `BouncyCastle` версии 1.60 для jdk15:
+3. Скачать библиотеки криптографии `BouncyCastle` версии 1.60 для jdk15:
    * [bcpkix-jdk15on-1.60.jar](https://repo1.maven.org/maven2/org/bouncycastle/bcpkix-jdk15on/1.60/bcpkix-jdk15on-1.60.jar)
    * [bcprov-jdk15on-1.60.jar](https://repo1.maven.org/maven2/org/bouncycastle/bcprov-jdk15on/1.60/bcprov-jdk15on-1.60.jar)
-3. Скачать библитеку Apache Codec последней версии:
+4. Скачать библитеку Apache Codec последней версии:
    * [commons-codec-1.15.jar](https://repo1.maven.org/maven2/commons-codec/commons-codec/1.15/commons-codec-1.15.jar)
-4. Добавить скачанные jar-файлы в classpath сервиса, который будет накладывать подпись.
+5. Добавить скачанные jar-файлы в classpath сервиса, который будет накладывать подпись.
+
+Набор библиотек `КриптоПро Java CSP и JTLS` предоставляет доступ к криптографическим функциям,
+расположеннным в приложении `КриптоПро CSP 5.0`, 
+поэтому для наложения подписи требуются одновременно эти два комплекта ПО.
 
 ### Приватный ключ
 
